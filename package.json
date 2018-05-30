@@ -1,6 +1,6 @@
 {
   "name": "webpack-build-notifications",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A webpack plugin that uses node-notifier to display webpack build notifications on any OS. Supports all the node-notifier configurations.",
   "main": "Notifier.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/ntavelis/webpack-build-notifications/issues"
   },
-  "homepage": "https://github.com/ntavelis/webpack-build-notifications#readme"
+  "homepage": "https://github.com/ntavelis/webpack-build-notifications#readme",
   "dependencies": {
     "ansi-regex": "^2.0.0",
     "strip-ansi": "^3.0.1",
