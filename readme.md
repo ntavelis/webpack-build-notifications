@@ -2,7 +2,7 @@
 
 This is a webpack plugin that will notify you for your build process. It is highly customizable and you are free to pass any valid `note-notifier` configuration.
 
-## Installation
+ ## Installation
 
   1. `npm install webpack-build-notifications --save-dev` or `yarn add webpack-build-notifications --dev`
   2. Add it to the plugins in the webpack.config.js file.
@@ -19,8 +19,14 @@ This is a webpack plugin that will notify you for your build process. It is high
      }
   ```
   
-## Override the default config
+ ## Override the default config
   TODO
+ 
+ ## Credits
+ 
+ This package uses the [node-notifier](https://github.com/mikaelbr/node-notifier) package to display the notifications.
+ 
+ Also this package is heavily inspired from [webpack-build-notifier](https://github.com/RoccoC/webpack-build-notifier) 
  
  ## Contributing
  
