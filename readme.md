@@ -89,7 +89,7 @@ This is a webpack plugin that will notify you for your build process. It is high
        onClick: function(notifierObject, options){}
    }
    ```
-   #### 
+   #### onTimeout
    A function to be called when the notification closes. By default it does not do anything.
    
    The function's signature
