@@ -37,7 +37,7 @@ let NtavelisWebpackNotifier = function(cfg) {
     // The default configuration
     let defaultConfig = {
         appName: appName,
-        title: "Mix webpack build",
+        title: "Webpack build result",
         contentImage: Mix.paths.root('node_modules/pretty-mix-notifications/icons/success.png'),
 
         successIcon: path.join(defaultIconPath, 'success.png'),
@@ -110,8 +110,8 @@ NtavelisWebpackNotifier.prototype.onCompilationWatchRun = function(compilation, 
 };
 
 NtavelisWebpackNotifier.prototype.onCompilationDone = function(results) {
+
     let notify,
-        title = this.title + ' - ',
         msg = 'Build successful!',
         icon = this.successIcon,
         sound = this.successSound;
@@ -119,7 +119,6 @@ NtavelisWebpackNotifier.prototype.onCompilationDone = function(results) {
     if (results.hasErrors()) {
         let error = results.compilation.errors[0];
         notify = true;
-        title += 'Error';
         msg = this.formatMessage(error, error.module && error.module.rawRequest ? error.module.rawRequest : '');
         icon = this.failureIcon;
         sound = this.failureSound;
@@ -127,13 +126,11 @@ NtavelisWebpackNotifier.prototype.onCompilationDone = function(results) {
     } else if (!this.suppressWarning && results.hasWarnings()) {
         let warning = results.compilation.warnings[0];
         notify = true;
-        title += 'Warning';
         msg = this.formatMessage(warning, warning.module && warning.module.rawRequest ? warning.module.rawRequest : '');
         icon = this.warningIcon;
         sound = this.warningSound;
         buildSuccessful = false;
     } else {
-        title += 'Success';
         if (this.suppressSuccess === "always" || (this.suppressSuccess === "initial" && !hasRun)) {
             notify = false;
         } else if (this.suppressSuccess === false || !buildSuccessful) {
@@ -144,7 +141,6 @@ NtavelisWebpackNotifier.prototype.onCompilationDone = function(results) {
 
     if (notify) {
         this.notify({
-            title: title,
             message: stripAnsi(msg),
             sound: sound,
             icon: icon,
