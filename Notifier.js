@@ -57,7 +57,7 @@ let NtavelisWebpackNotifier = function(cfg) {
         wait: true,
         messageFormatter: defaultMessageFormatter,
         onClick: function(notifierObject, options) { activateTerminalWindow(); },
-        onTimeout: function(){}
+        onTimeout: null
     };
 
     // Mix the user's configuration with the default.
@@ -77,7 +77,7 @@ let NtavelisWebpackNotifier = function(cfg) {
     this.formatMessage = function(error, filepath) {
         let message = this.messageFormatter(error, filepath);
         if (typeof message === "string") {
-            return message.substr(0, 256); // limit message length to 256 characters, fixes #20
+            return message.substr(0, 256); // limit message length to 256 characters
         } else {
             throw "Invalid message type '" + typeof message + "'; messageFormatter must return a String.";
         }
