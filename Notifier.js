@@ -57,7 +57,7 @@ let NtavelisWebpackNotifier = function(cfg) {
         wait: true,
         messageFormatter: defaultMessageFormatter,
         onClick: function(notifierObject, options) { activateTerminalWindow(); },
-        onTimeout: null
+        onTimeout: function(notifierObject, options) { }
     };
 
     // Mix the user's configuration with the default.
