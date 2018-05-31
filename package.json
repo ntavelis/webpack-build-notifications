@@ -1,6 +1,6 @@
 {
   "name": "webpack-build-notifications",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A webpack plugin that uses node-notifier to display webpack build notifications on any OS. Supports all the node-notifier configurations.",
   "main": "Notifier.js",
   "scripts": {
