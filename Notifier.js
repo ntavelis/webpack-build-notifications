@@ -38,7 +38,7 @@ let NtavelisWebpackNotifier = function(cfg) {
     let defaultConfig = {
         appName: appName,
         title: "Webpack build result",
-        contentImage: Mix.paths.root('node_modules/pretty-mix-notifications/icons/success.png'),
+        contentImage: path.join(defaultIconPath, 'success.png'),
 
         successIcon: path.join(defaultIconPath, 'success.png'),
         warningIcon: path.join(defaultIconPath, 'warning.png'),
